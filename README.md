@@ -8,11 +8,7 @@
 
 
 ### Projekt Links
+* [Script für Bildverkleinern]()
 * [Ziele]()
-* [Script für Ticketsystem Installation]()
-* [Dokumentation Ticketsystem]()
-* [Tests für Ticketsystem]()
-
-
-### Verwendetes Ticketsystem
-* [osTicket](https://osticket.com/)
+* [Dokumentation Bildverkleinern]()
+* [Tests für Bildverkleinern]()
