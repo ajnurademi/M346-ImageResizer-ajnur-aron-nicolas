@@ -6,9 +6,12 @@
 * [Aron Herbel](https://github.com/aronherbel)
 * [Nicolas Haas](https://github.com/cpowern)
 
-
-### Projekt Links
+### Project Links
 * [Script für Bildverkleinern]()
 * [Ziele]()
 * [Dokumentation Bildverkleinern]()
 * [Tests für Bildverkleinern]()
+
+### Script
+
+### Documentation
