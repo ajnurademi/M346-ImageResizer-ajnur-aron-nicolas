@@ -12,3 +12,7 @@
 * [Ziele]()
 * [Dokumentation Bildverkleinern]()
 * [Tests für Bildverkleinern]()
+
+### Skript
+
+### Documentation
