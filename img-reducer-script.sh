@@ -2,9 +2,9 @@
 
 ################################################################################
 # Skriptname:     img-reducer-script.sh
-# Beschreibung:   Nutzen.
+# Beschreibung:   Mit diesem Script können sie 
 # Autor:          Ajnur Herbel, Aron Herbel & Hicolas Haas
-# Datum:          19. März 2024
+# Datum:          19. March 2024
 # Version:        1.0
 ################################################################################
 
