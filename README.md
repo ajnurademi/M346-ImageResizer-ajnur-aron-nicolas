@@ -12,6 +12,5 @@
 * [Dokumentation Bildverkleinern]()
 * [Tests für Bildverkleinern]()
 
-### Script
 
 ### Documentation
