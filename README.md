@@ -12,5 +12,7 @@
 * [Dokumentation Bildverkleinern]()
 * [Tests für Bildverkleinern]()
 
+# Project Work Module 346 - Task Description
+
 
 ### Documentation
