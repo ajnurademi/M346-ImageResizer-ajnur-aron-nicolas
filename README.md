@@ -9,7 +9,7 @@ Die tatsächliche Dokumentation unseres Projekts bzw. Repositories ist unter die
 
 ## 🚩 Ziele
 Das Hauptziel des Projekts ist es, ...
-* **Aufsetzen eines funktionstüchtigen Cloud-Services:** Implementierung eines Services in der Cloud gemäß den Projektanforderungen.
+* **Aufsetzen eines funktionstüchtigen Cloud-Services:** Implementierung eines Services in der Cloud gemäss den Projektanforderungen.
 * **Implementierung als Infrastructure as Code (IaC):** Gestaltung der gesamten Infrastruktur als Code für einfache Bereitstellung und Verwaltung in der Cloud.
 * **Dokumentation in Git und Markdown:** Erstellung der Projektdokumentation direkt über Git in Markdown-Format für eine einfache Verwaltung und Integration.
 * **Durchführung und Protokollierung von Testfällen:** Definieren und Durchführen von Testfällen zur Gewährleistung der Funktionalität des Services und Protokollierung der Ergebnisse.
