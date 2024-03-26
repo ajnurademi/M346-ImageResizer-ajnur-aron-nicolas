@@ -2,7 +2,11 @@
 ---
 
 ## 📖 Beschreibung 
-Das Projekt im Modul M346 zielt darauf ab, mithilfe von AWS ein Bild in seiner Originalform in die Cloud hochzuladen. Dies geschieht durch die Verwendung von S3 und Lambda.
+Das Ziel des Projekts im Modul M346 besteht darin, die Funktionalität zu entwickeln, mit der ein Bild in seinem ursprünglichen Format in die Cloud hochgeladen wird. Diese Aufgabe wird mithilfe der Amazon Web Services (AWS) Plattform erreicht, indem speziell die Dienste Amazon S3 (Simple Storage Service) und AWS Lambda eingesetzt werden.
+
+Amazon S3 dient als Speicherdienst in der Cloud, der es ermöglicht, große Mengen an Daten, einschliessich Bilddateien, sicher und zuverlässig zu speichern. Lambda hingegen ist ein serverloser Bereitstellungsdienst, der es ermöglicht, Code auszuführen, ohne sich um die Verwaltung von Servern kümmern zu müssen.
+
+Durch die Verwendung von S3 und Lambda kann das Projekt automatisiert werden, um den Upload von Bildern zu erleichtern.
 
 ## 📃 Dokumenatation 
 Die tatsächliche Dokumentation unseres Projekts bzw. Repositories ist unter diesem Link zugänglich: [**Dokumentation M346-ImageResizer-ajnur-aron-nicolas**](https://ajnurademi.github.io/M346-ImageResizer-ajnur-aron-nicolas/).
