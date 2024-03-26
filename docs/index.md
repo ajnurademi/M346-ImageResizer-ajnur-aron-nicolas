@@ -1,9 +1,28 @@
-# M346 - Dokumentation
-
-
+# M346 - Dokumentation 
 ## Einleitung
 
-Willkommen zur offiziellen Dokumentation des M346-Moduls! Diese Dokumentation bietet eine umfassende Anleitung zur Verwendung des M346-Moduls, das entwickelt wurde, um das Verkleinern Bildgrössen zu erleichtern....
+Willkommen zur offiziellen Dokumentation des M346-Moduls! Diese Dokumentation bietet eine umfassende Anleitung zur Verwendung des M346-Moduls, das entwickelt wurde, um das Verkleinern von Bildgrößen zu erleichtern.
+
+Wir haben ein Skript erstellt, das mithilfe von AWS CLI automatisch die Größe von Bildern reduziert. Dies wird durch die Integration von AWS S3 und Lambda-Funktionen ermöglicht, die eine nahtlose und effiziente Verarbeitung ermöglichen.
+
+Unter [**Code**](./Skript.md) finden Sie unser Skript mit den einzelnen Erklärungen.
+
+Unter [**Test**](./Tests.md) finden Sie die Tests zu unseren jeweiligen Codes.
+
+## Installation 
+
+### Systemanforderungen
+- Stellen Sie sicher, dass Sie über eine stabile Internetverbindung verfügen.
+- Stellen Sie sicher, dass die AWS CLI auf Ihrem System installiert ist und ordnungsgemäß konfiguriert ist.
+
+
+
+
+## Verwendung
+## Lizenzinformationen 
+
+
+
 
 ## Codeblocks
 
