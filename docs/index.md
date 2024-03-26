@@ -1,14 +1,15 @@
-# Homepage
+# M346 - Dokumentation
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
-## Code Annotation Examples
+## Einleitung
 
-### Codeblocks
+Willkommen zur offiziellen Dokumentation des M346-Moduls! Diese Dokumentation bietet eine umfassende Anleitung zur Verwendung des M346-Moduls, das entwickelt wurde, um das Verkleinern Bildgrössen zu erleichtern....
+
+## Codeblocks
 
 Some `code` goes here.
 
-### Plain codeblock
+## Plain codeblock
 
 A plain codeblock:
 
@@ -18,7 +19,7 @@ def myfunction()
 // some comment
 ```
 
-#### Code for a specific language
+## Code for a specific language
 
 Some more code with the `py` at the start:
 
@@ -27,7 +28,7 @@ import tensorflow as tf
 def whatever()
 ```
 
-#### With a title
+## With a title
 
 ``` py title="bubble_sort.py"
 def bubble_sort(items):
@@ -37,7 +38,7 @@ def bubble_sort(items):
                 items[j], items[j + 1] = items[j + 1], items[j]
 ```
 
-#### With line numbers
+## With line numbers
 
 ``` py linenums="1"
 def bubble_sort(items):
@@ -47,7 +48,7 @@ def bubble_sort(items):
                 items[j], items[j + 1] = items[j + 1], items[j]
 ```
 
-#### Highlighting lines
+## Highlighting lines
 
 ``` py hl_lines="2 3"
 def bubble_sort(items):
