@@ -1,4 +1,4 @@
-# M346-Project-ajnur-aron-nicolas
+# M346-Projekt-Bilderverkleinern
 ---
 
 ## 📖 Beschreibung 
