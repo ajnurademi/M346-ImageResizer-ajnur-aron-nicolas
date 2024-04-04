@@ -31,3 +31,38 @@ else
     fi
 fi
 
+AWS_CONFIG_FILE=~/.aws/config
+
+# Original image
+ORIGINALBUCKET=""
+
+# To save the edited image
+RESIZEDIMAGEBUCKET=""
+
+# To scale the image
+RESICEPERCENTAGE=0
+
+# Creating Lambda Function
+while true; do
+
+    # Request Bucket name 
+    echo "Please enter the name of the bucket for the raw images"
+    read ORIGINALBUCKET
+
+  # Checking if the bucket name already exists
+  RESULT=$(aws s3api head-bucket --bucket $ORIGINALBUCKET 2>&1)
+
+	echo $RESULT
+  # Check result
+  if [[ $RESULT = *404* ]]
+   then
+    echo "Bucket $ORIGINALBUCKET is available"
+    echo "-----------------------------"
+    aws s3 mb s3://$ORIGINALBUCKET
+    echo "-----------------------------"
+    break
+  else
+    echo "Bucket $ORIGINALBUCKET is not available , please try another name"
+    echo "-----------------------------"
+  fi
+done
