@@ -2,13 +2,12 @@
 
 ## Hochladen in erste Bucket
 
-some text 
+some text
 
 ## Übertrag in zweite Bucket
 
-some text 
+some text
 
 ## Wurde Bild komprimiert?
-
 
 ## Wird das verkleinerte Bild heruntergeladen?
