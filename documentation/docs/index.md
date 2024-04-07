@@ -27,3 +27,4 @@ Das Skript wird verwendet, um Bilder zu bearbeiten, insbesondere solche, die Sie
 ## 🔑 Lizenzinformationen
 
 Die bereitgestellten Skripte und Codebeispiele unterliegen der MIT-Lizenz. Das bedeutet, dass Sie diese frei verwenden, modifizieren und verbreiten können.
+
