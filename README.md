@@ -28,4 +28,4 @@ Das Skript verwendet die AWS CLI, um das Bild in S3 hochzuladen. Anschließend w
 - [Nicolas Haas](https://github.com/cpowern)
 
 ## 📜 Lizenz
-Dieses Projekt ist unter der MIT-Lizenz frei zugänglich. Weitere Informationen finden Sie in der [Lizenzdatei]([/M346-ImageResizer-ajnur-aron-nicolas/LICENCE.md](https://github.com/ajnurademi/M346-ImageResizer-ajnur-aron-nicolas/blob/e5c8f0fe7dea32e3ddd6e0e0142c05ad18e82e38/documentation/LICENCE.md)).
+Dieses Projekt ist unter der MIT-Lizenz frei zugänglich. Weitere Informationen finden Sie in der [Lizenzdatei](/M346-ImageResizer-ajnur-aron-nicolas/LICENCE.md).
