@@ -1,4 +1,14 @@
+<<<<<<< HEAD
 # M346 - Skript
+=======
+---
+runme:
+  id: 01HTNN62EEWHEPK7PNRHF9WARF
+  version: v3
+---
+
+# M346 - Script documentation
+>>>>>>> 26625414e88d1f8cdfd553fe3d6ab49f905f4cf0
 
 ## Codeblocks
 
@@ -8,43 +18,57 @@ Some `code` goes here.
 
 A plain codeblock:
 
+<<<<<<< HEAD
+=======
+```ini {"id":"01HTNN62EEWHEPK7PNR8SHJGPN"}
+Some code here
+def myfunction()
+// some comment
+
+```
+
+>>>>>>> 26625414e88d1f8cdfd553fe3d6ab49f905f4cf0
 ## Code for a specific language
 
 Some more code with the `py` at the start:
 
-``` py
+```py {"id":"01HTNN62EEWHEPK7PNRA64GKN3"}
 import tensorflow as tf
 def whatever()
+
 ```
 
 ## With a title
 
-``` py title="bubble_sort.py"
+```py {"id":"01HTNN62EEWHEPK7PNRCPZXRDT"}
 def bubble_sort(items):
     for i in range(len(items)):
         for j in range(len(items) - 1 - i):
             if items[j] > items[j + 1]:
                 items[j], items[j + 1] = items[j + 1], items[j]
+
 ```
 
 ## With line numbers
 
-``` py linenums="1"
+```py {"id":"01HTNN62EEWHEPK7PNRCV7T1ZY"}
 def bubble_sort(items):
     for i in range(len(items)):
         for j in range(len(items) - 1 - i):
             if items[j] > items[j + 1]:
                 items[j], items[j + 1] = items[j + 1], items[j]
+
 ```
 
 ## Highlighting lines
 
-``` py hl_lines="2 3"
+```py {"id":"01HTNN62EEWHEPK7PNRFFF1J14"}
 def bubble_sort(items):
     for i in range(len(items)):
         for j in range(len(items) - 1 - i):
             if items[j] > items[j + 1]:
                 items[j], items[j + 1] = items[j + 1], items[j]
+
 ```
 
 ## Icons and Emojs

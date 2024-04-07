@@ -33,6 +33,7 @@ fi
 
 AWS_CONFIG_FILE=~/.aws/config
 
+<<<<<<< HEAD
 # Checking if AWS configuration file exists
 if [ -f "$AWS_CONFIG_FILE" ]; then
     echo "AWS configuration already exists."
@@ -170,3 +171,38 @@ aws s3 cp s3://$BUCKETDESTINATION/resized-testImage.jpg ./ReducedImage
 echo "The image is located in the current directory under ./ReducedImage"
 
 sleep 5
+=======
+# Original image
+ORIGINALBUCKET=""
+
+# To save the edited image
+RESIZEDIMAGEBUCKET=""
+
+# To scale the image
+RESICEPERCENTAGE=0
+
+# Creating Lambda Function
+while true; do
+
+    # Request Bucket name 
+    echo "Please enter the name of the bucket for the raw images"
+    read ORIGINALBUCKET
+
+  # Checking if the bucket name already exists
+  RESULT=$(aws s3api head-bucket --bucket $ORIGINALBUCKET 2>&1)
+
+	echo $RESULT
+  # Check result
+  if [[ $RESULT = *404* ]]
+   then
+    echo "Bucket $ORIGINALBUCKET is available"
+    echo "-----------------------------"
+    aws s3 mb s3://$ORIGINALBUCKET
+    echo "-----------------------------"
+    break
+  else
+    echo "Bucket $ORIGINALBUCKET is not available , please try another name"
+    echo "-----------------------------"
+  fi
+done
+>>>>>>> 26625414e88d1f8cdfd553fe3d6ab49f905f4cf0
