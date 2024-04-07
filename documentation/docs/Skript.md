@@ -2,7 +2,8 @@
 
 ## Skript-Dokumentation: img-reducer-script.sh
 
-## Installation und Konfiguration von AWS CLI:
+## Installation und Konfiguration von AWS CLI
+
 Das Skript überprüft zunächst, ob die AWS CLI bereits installiert ist. Falls nicht, wird sie installiert. Anschliessend wird die Konfigurationsdatei für die AWS CLI erstellt, falls sie noch nicht existiert. Der Benutzer wird aufgefordert, seine AWS-Zugangsdaten einzugeben, und die eingegebenen Daten werden in der Konfigurationsdatei gespeichert.
 
 ``` js
@@ -58,8 +59,8 @@ sed -i "s/ACCOUNT_ID/${ARN}/g" index-notification.json
 ```
 
 ### Bucket erstellen
-In diesem Code wartet das Skript darauf, dass der Benutzer einen gültigen Bucket-Namen eingibt, und erstellt dann den Bucket, wenn der eingegebene Name nicht bereits verwendet wird.
 
+In diesem Code wartet das Skript darauf, dass der Benutzer einen gültigen Bucket-Namen eingibt, und erstellt dann den Bucket, wenn der eingegebene Name nicht bereits verwendet wird.
 
 ```js
 BUCKETORIGINAL=""
@@ -96,10 +97,9 @@ done
 
 ```
 
-
 ### Bucket erstellen für Komprimierte Bilder und Prozentzahl
-Dieser Codeblock enthält zwei while-Schleifen, die den Benutzer zur Eingabe eines Bucket-Namens für komprimierte Bilder und eines Prozentsatzes für die Bildgrößenänderung auffordern. Hier ist eine Zusammenfassung:
 
+Dieser Codeblock enthält zwei while-Schleifen, die den Benutzer zur Eingabe eines Bucket-Namens für komprimierte Bilder und eines Prozentsatzes für die Bildgrößenänderung auffordern. Hier ist eine Zusammenfassung:
 
 ```js
 while true; do
@@ -139,8 +139,9 @@ done
 
 ```
 
-### Lambda-Funktion erstellen und konfigurieren:
-Das Skript erstellt eine Lambda-Funktion namens "imageConverter", falls sie noch nicht vorhanden ist. Dabei wird die Funktion für die Ausführung mit der Laufzeit Node.js 18.x konfiguriert. Es wird auch eine Berechtigung hinzugefügt, damit die Lambda-Funktion von S3-Events ausgelöst werden kann. 
+### Lambda-Funktion erstellen und konfigurieren
+
+Das Skript erstellt eine Lambda-Funktion namens "imageConverter", falls sie noch nicht vorhanden ist. Dabei wird die Funktion für die Ausführung mit der Laufzeit Node.js 18.x konfiguriert. Es wird auch eine Berechtigung hinzugefügt, damit die Lambda-Funktion von S3-Events ausgelöst werden kann.
 
 ``` js
 # Checking if lambda function exists
@@ -174,7 +175,7 @@ aws s3api put-bucket-notification-configuration --bucket "$BUCKETORIGINAL" --not
 
 ### Hochladen des Bildes
 
-In diesem kurzen Abschnitt, werden die Variablen der Lambda-Funktion übergeben und das Bild wird in die das erste Bucket hochgeladen. 
+In diesem kurzen Abschnitt, werden die Variablen der Lambda-Funktion übergeben und das Bild wird in die das erste Bucket hochgeladen.
 
 ```js
 # Passing the variables
@@ -182,7 +183,6 @@ aws lambda update-function-configuration --function-name imageConverter --enviro
 
 # Uploading the image to the source bucket
 aws s3 cp ImageTest.jpg s3://$BUCKETORIGINAL/ImageTest.jpg
-
 
 sleep 5
 ```
@@ -197,12 +197,9 @@ echo "-----------------------------------------------------------------"
 echo "-----------------------------------------------------------------"
 ```
 
-
 Das Skript bietet eine umfassende Automatisierungslösung für Bildverkleinerungsaufgaben und ermöglicht eine einfache Konfiguration und Verwendung von AWS-Diensten.
 
-
-
-## Skript-Dokumentation: img-reducer-lamda.zip 
+## Skript-Dokumentation: img-reducer-lamda.zip
 
 ```js
 

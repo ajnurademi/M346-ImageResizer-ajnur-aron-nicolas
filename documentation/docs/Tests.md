@@ -12,10 +12,8 @@ Wenn der Benutzer eine Invalide Prozenteingabe tätigt wird für eine ordentlich
 
 ![test 2](img/InvalidProcentage.png)
 
-
 ## Wird Lambda-Function richtig erstellt konfiguriert?
 
 In diesem Beispiel können wir erkennen, dass die existierende Lambda-Function gelöscht wurde und die neue erstellt und die richtige Konfiguration übergeben wurde.
 
 ![test 3](img/Lambdaerstellen.png)
-
