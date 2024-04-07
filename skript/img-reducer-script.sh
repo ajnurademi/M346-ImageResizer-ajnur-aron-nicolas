@@ -33,7 +33,6 @@ fi
 
 AWS_CONFIG_FILE=~/.aws/config
 
-<<<<<<< HEAD
 # Checking if AWS configuration file exists
 if [ -f "$AWS_CONFIG_FILE" ]; then
     echo "AWS configuration already exists."
@@ -155,7 +154,7 @@ aws s3api put-bucket-notification-configuration --bucket "$BUCKETSOURCE" --notif
 aws lambda update-function-configuration --function-name imageConverter --environment "Variables={BUCKET_NAME_ORIGINAL=$BUCKETSOURCE,BUCKET_NAME_COMPRESSED=$BUCKETDESTINATION, PERCENTAGE_RESIZE=$RESIZEPERCENTAGE}" --query "Environment"
 
 # Uploading the image to the source bucket
-aws s3 cp testImage.jpg s3://$BUCKETSOURCE/testImage.jpg
+aws s3 cp ImageTest.jpg s3://$BUCKETSOURCE/ImageTest.jpg
 
 sleep 10
 
@@ -166,7 +165,7 @@ fi
 mkdir ./ReducedImage
 chmod -R 755 ./ReducedImage
 
-aws s3 cp s3://$BUCKETDESTINATION/resized-testImage.jpg ./ReducedImage
+aws s3 cp s3://$BUCKETDESTINATION/resized-ImageTest.jpg ./ReducedImage
 
 echo "The image is located in the current directory under ./ReducedImage"
 
