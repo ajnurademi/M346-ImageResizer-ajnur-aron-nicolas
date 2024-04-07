@@ -2,7 +2,7 @@
 
 ## Skript-Dokumentation: img-reducer-script.sh
 
-## Installation und Konfiguration von AWS CLI
+### Installation und Konfiguration von AWS CLI
 
 Das Skript überprüft zunächst, ob die AWS CLI bereits installiert ist. Falls nicht, wird sie installiert. Anschliessend wird die Konfigurationsdatei für die AWS CLI erstellt, falls sie noch nicht existiert. Der Benutzer wird aufgefordert, seine AWS-Zugangsdaten einzugeben, und die eingegebenen Daten werden in der Konfigurationsdatei gespeichert.
 
