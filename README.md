@@ -11,6 +11,8 @@ Durch die Verwendung von S3 und Lambda kann das Projekt automatisiert werden, um
 ## 📃 Dokumenatation 
 Die tatsächliche Dokumentation unseres Projekts bzw. Repositories ist unter diesem Link zugänglich: [**Dokumentation M346-ImageResizer-ajnur-aron-nicolas**](https://ajnurademi.github.io/M346-ImageResizer-ajnur-aron-nicolas/).
 
+WICHTIGE MELDUNG: Wenn die aktuelle Version der Dokumentation nicht online angezeigt wird, dann löschen sie den 'Cache' ihres Browser und rufen Sie den oberigen LINK nochmals auf.
+
 ## 🚩 Ziele
 Das Hauptziel des Projekts ist es, ...
 * **Aufsetzen eines funktionstüchtigen Cloud-Services:** Implementierung eines Services in der Cloud gemäss den Projektanforderungen.
