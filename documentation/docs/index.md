@@ -1,7 +1,5 @@
 # M346 - Dokumentation
 
-# M346 - Documentation
-
 ## ✒️ Einleitung
 
 Willkommen zur offiziellen Dokumentation des M346-Moduls! Diese Dokumentation bietet eine umfassende Anleitung zur Verwendung des M346-Moduls, das entwickelt wurde, um das Verkleinern von Bildgrößen zu erleichtern.
@@ -27,4 +25,3 @@ Das Skript wird verwendet, um Bilder zu bearbeiten, insbesondere solche, die Sie
 ## 🔑 Lizenzinformationen
 
 Die bereitgestellten Skripte und Codebeispiele unterliegen der MIT-Lizenz. Das bedeutet, dass Sie diese frei verwenden, modifizieren und verbreiten können.
-

@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV=$(cygpath "C:/Users/Ajnur-ksb/OneDrive - Kt. SG BLD/KSB/Informatik/Module/Modul 346/ImageResizer-ajnur-aron-nicolas/M346-ImageResizer-ajnur-aron-nicolas/venv")
+VIRTUAL_ENV=$(cygpath "C:\Users\Ajnur-ksb\Downloads\test\M346-ImageResizer-ajnur-aron-nicolas\documentation\venv")
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
