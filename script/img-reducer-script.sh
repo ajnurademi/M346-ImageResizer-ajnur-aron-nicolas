@@ -31,23 +31,23 @@ else
     fi
 fi
 
-AWS_CONFIG_FILE=~/.aws/config
+CONFIGFILE=~/.aws/config
 
 # Checking if AWS configuration file exists
-if [ -f "$AWS_CONFIG_FILE" ]; then
+if [ -f "$CONFIGFILE" ]; then
     echo "AWS configuration already exists."
 else
     echo "AWS configuration does not exist. Creating configuration now."
 
     # Creating configuration
     aws configure
-    echo "Enter the session token with the variable aws_session_token= :"
+    echo "Session token with the variable aws_session_token= :"
     read userInput
     chmod --recursive 777 ~/.aws
     echo "$userInput" >> ~/.aws/credentials
 
     # Checking if configuration was created successfully
-    if [ -f "$AWS_CONFIG_FILE" ]; then
+    if [ -f "$CONFIGFILE" ]; then
         echo "AWS configuration created successfully."
     else
         echo "Error creating AWS configuration."
@@ -55,72 +55,74 @@ else
     fi
 fi
 
-BUCKETSOURCE=""
-BUCKETDESTINATION=""
-RESIZEPERCENTAGE=0
-
 ARN=$(aws sts get-caller-identity --query "Account" --output text)
 
 sed -i "s/ACCOUNT_ID/${ARN}/g" index-notification.json
+
+BUCKETORIGINAL=""
+
+BUCKETCOMPRESSED=""
+
+RESIZEPERCENTAGE=0
 
 # Creating the lambda function
 while true; do
 
     # Asking for bucket name
-    echo "Enter the name of the bucket for original images: (lowercase)"
+    echo "Name of the bucket for original images:"
     # Storing in variable
-    read BUCKETSOURCE
+    read BUCKETORIGINAL
 
     # Checking if bucket exists
-    RESULT=$(aws s3api head-bucket --bucket $BUCKETSOURCE 2>&1)
+    RESULT=$(aws s3api head-bucket --bucket $BUCKETORIGINAL 2>&1)
 
     echo $RESULT
     # Checking response
     if [[ $RESULT = *404* ]]
     then
-        echo "Bucket $BUCKETSOURCE is available"
+        echo "Bucket $BUCKETORIGINAL is available"
         echo "-----------------------------------------------------------------"
-        aws s3 mb s3://$BUCKETSOURCE
+        aws s3 mb s3://$BUCKETORIGINAL
         echo "-----------------------------------------------------------------"
         break
     else
-        echo "Bucket $BUCKETSOURCE is not available, please try again"
+        echo "Bucket $BUCKETORIGINAL is not available, please try again"
         echo "-----------------------------------------------------------------"
     fi
 done
 
 while true; do
     # Asking for bucket name
-    echo "Enter the name of the bucket for compressed images: (lowercase)"
+    echo "Name of the bucket for compressed images:"
     # Storing in variable
-    read BUCKETDESTINATION
+    read BUCKETCOMPRESSED
 
     # Checking if bucket exists
-    RESULT=$(aws s3api head-bucket --bucket $BUCKETDESTINATION 2>&1)
+    RESULT=$(aws s3api head-bucket --bucket $BUCKETCOMPRESSED 2>&1)
 
     # Checking response
     if [[ $RESULT = *404* ]]
     then
-        echo "Bucket $BUCKETDESTINATION is available"
+        echo "Bucket $BUCKETCOMPRESSED is available"
         echo "-----------------------------------------------------------------"
-        aws s3 mb s3://$BUCKETDESTINATION
+        aws s3 mb s3://$BUCKETCOMPRESSED
         echo "-----------------------------------------------------------------"
         break
     else
-        echo "Bucket $BUCKETDESTINATION is not available, please try again"
+        echo "Bucket $BUCKETCOMPRESSED is not available, please try again"
         echo "-----------------------------------------------------------------"
     fi
 done
 
 while true; do
-    echo "Enter a percentage for resizing the image (as a whole number, without percentage sign)"
+    echo "Percentage for resizing the image:"
     read RESIZEPERCENTAGE
 
     if [[ $RESIZEPERCENTAGE =~ ^[0-9]+$ ]]; then
-        echo "You entered $RESIZEPERCENTAGE%."
+        echo "Percentage: $RESIZEPERCENTAGE%."
         break
     else
-        echo "Error: You did not enter a valid percentage."
+        echo "Error: Not valid percentage. (number without percent sign)"
     fi
 done
 
@@ -130,16 +132,16 @@ existing_function=$(aws lambda get-function --function-name "imageConverter" 2>/
 if [ $? -eq 0 ]; then
     # If the function exists, delete it
     aws lambda delete-function --function-name imageConverter
-    echo "The existing Lambda function has been deleted."
+    echo "Existing Lambda function deleted."
 fi
 
 # Creating the lambda function
 aws lambda create-function --function-name imageConverter --runtime nodejs18.x --role arn:aws:iam::$ARN:role/LabRole --handler img-reducer-lamda.handler --zip-file fileb://./img-reducer-lamda.zip --memory-size 256
 
 # Adding permission for S3 bucket and S3 trigger
-aws lambda add-permission --function-name imageConverter --action "lambda:InvokeFunction" --principal s3.amazonaws.com --source-arn arn:aws:s3:::$BUCKETSOURCE --statement-id "$BUCKETSOURCE"
+aws lambda add-permission --function-name imageConverter --action "lambda:InvokeFunction" --principal s3.amazonaws.com --source-arn arn:aws:s3:::$BUCKETORIGINAL --statement-id "$BUCKETORIGINAL"
 
-aws s3api put-bucket-notification-configuration --bucket "$BUCKETSOURCE" --notification-configuration '{
+aws s3api put-bucket-notification-configuration --bucket "$BUCKETORIGINAL" --notification-configuration '{
     "LambdaFunctionConfigurations": [
         {
             "LambdaFunctionArn": "arn:aws:lambda:us-east-1:'$ARN':function:imageConverter",
@@ -151,22 +153,14 @@ aws s3api put-bucket-notification-configuration --bucket "$BUCKETSOURCE" --notif
 }'
 
 # Passing the variables
-aws lambda update-function-configuration --function-name imageConverter --environment "Variables={BUCKET_NAME_ORIGINAL=$BUCKETSOURCE,BUCKET_NAME_COMPRESSED=$BUCKETDESTINATION, PERCENTAGE_RESIZE=$RESIZEPERCENTAGE}" --query "Environment"
+aws lambda update-function-configuration --function-name imageConverter --environment "Variables={BUCKET_NAME_ORIGINAL=$BUCKETORIGINAL,BUCKET_NAME_COMPRESSED=$BUCKETCOMPRESSED, PERCENTAGE_RESIZE=$RESIZEPERCENTAGE}" --query "Environment"
 
 # Uploading the image to the source bucket
-aws s3 cp ImageTest.jpg s3://$BUCKETSOURCE/ImageTest.jpg
+aws s3 cp ImageTest.jpg s3://$BUCKETORIGINAL/ImageTest.jpg
 
-sleep 10
-
-if [ -d ./ReducedImage ]; then
-    rm -r ./ReducedImage
-fi
-
-mkdir ./ReducedImage
-chmod -R 755 ./ReducedImage
-
-aws s3 cp s3://$BUCKETDESTINATION/resized-ImageTest.jpg ./ReducedImage
-
-echo "The image is located in the current directory under ./ReducedImage"
 
 sleep 5
+
+echo "-----------------------------------------------------------------"
+     echo "The image was uploaded :)"
+echo "-----------------------------------------------------------------"

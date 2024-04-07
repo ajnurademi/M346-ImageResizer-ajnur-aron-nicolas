@@ -1,14 +1,6 @@
-<<<<<<< HEAD
 # M346 - Dokumentation
-=======
----
-runme:
-  id: 01HTNN5CC8ZW4JSNFBADF1XWJY
-  version: v3
----
 
 # M346 - Documentation
->>>>>>> 26625414e88d1f8cdfd553fe3d6ab49f905f4cf0
 
 ## ✒️ Einleitung
 
@@ -26,14 +18,7 @@ Unter [**Test**](./Tests.md) finden Sie die Tests zu unseren jeweiligen Codes.
 
 - Stellen Sie sicher, dass Sie über eine stabile `Internetverbindung` verfügen.
 - Stellen Sie sicher, dass die `AWS CLI` auf Ihrem System installiert ist und ordnungsgemäss konfiguriert ist.
-
-<<<<<<< HEAD
-### 2.  asdf
-=======
-### 2.
-
-Fortsetzung folgt...
->>>>>>> 26625414e88d1f8cdfd553fe3d6ab49f905f4cf0
+- Konfigurieren Sie die AWS CLI mit Ihren AWS-Zugriffsschlüsseln, indem Sie aws configure in der Befehlszeile ausführen. Sie benötigen Zugriffsschlüssel mit ausreichenden Berechtigungen, um auf die AWS-Services zuzugreifen, die Ihr Lambda-Skript benötigt.
 
 ## 🖼️ Verwendung
 
